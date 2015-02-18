@@ -115,7 +115,7 @@
             {% if loop.index == 1 %}
             <div class="post-image">
               <a href="{{ post.permalink }}">
-                {% if photo %}
+                {% if photo && photo.width_600 %}
                 <img src="{{ photo.width_600 }}" alt="Picture {{ loop.index }}" />
                 {% else %}
                 <img src="http://placehold.it/400x300/0eafff/ffffff.png" alt="" />
@@ -271,15 +271,6 @@
     
     <!-- javasript -->
     <script src="{{ assets('js/gridly.min.js') }}" /></script>
-    <script>
-      var elements = document.getElementsByTagName('img')
-      for(var i=0; i<elements.length; i++) {
-        $(elements[i]).error(function(){
-                $(this).hide();
-        });
- 
-      }
 
-    </script>
 </body>
 </html>
